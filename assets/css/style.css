@@ -77,6 +77,7 @@ html {
   max-height: 95%;
   height: max-content;
   border-radius: 15px; /* Rounded outer border */
+  border-top: 0px;
   padding: 3px; /* Space for the gradient border */
   /* Gradient border effect */
   background: linear-gradient(#fd7d55, #0b1084); /* Primary to secondary gradient for border */
@@ -95,7 +96,10 @@ html {
 .card .card-body {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(240, 240, 255, 0.6)); /* Light inner gradient */
   border-radius: 12px; /* Inner content rounded corners */
+  border-top: 0px;
   padding: 15px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 /* Banner (Rounded Corners) */
@@ -119,16 +123,31 @@ html {
   top: -50px;
 }
 
-.card-body .profile-header .profil-logo {
-  position: relative;
-  border: 3px solid #ffffff; /* White border around profile image */
+/* Profile Picture Border */
+.profil-logo-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px; /* Outer size for the border */
+  height: 88px;
   border-radius: 50%;
+  background: linear-gradient(#fd7d55, #0b1084); /* Gradient border */
+  padding: 4px; /* Space between the border and inner image */
+  box-sizing: content-box;
+}
+
+/* Profile Picture */
+.card-body .profile-header .profil-logo {
+  width: 80px; /* Inner image size */
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .card-body .profile-header .profil-logo img {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
 
@@ -172,7 +191,7 @@ html {
 }
 
 .card-body .profile-header .profil-logo::before {
-  content: "See Profile";
+  content: "yo mamma";
   position: absolute;
   right: 0;
   top: 0;
@@ -180,14 +199,14 @@ html {
   opacity: 0;
   width: 100%;
   height: 100%;
-  color: #eeeeee;
+  color: #ffab7e;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   transition: opacity 0.15s;
 }
@@ -226,10 +245,11 @@ html {
 
 /* Profile Body */
 .card-body .profile-body {
-  background: rgba(255, 255, 255, 0.6); /* Very light transparent background */
-  border-radius: 10px; /* Slightly rounded inner body */
+  background: linear-gradient(180deg, rgba(255, 125, 85, 0.2), rgba(11, 16, 132, 0.2)); /* Light gradient for text area */
+  border-radius: 10px;
   padding: 13px;
   margin-top: 40px;
+  /*  sex  bg2 */
 }
 
 /* Username */
@@ -294,10 +314,10 @@ html {
 /* Category Titles */
 .card-body .profile-body .category-title {
   color: #333333;
-  font-weight: 700;
+  font-weight: 550; /* Adjusted for a medium weight */
   text-transform: uppercase;
-  font-size: 0.8rem;
-  margin-bottom: 8px;
+  font-size: 0.75rem; /* Smaller font size */
+  margin-bottom: 6px; /* Reduced margin for a tighter layout */
 }
 
 /* Basic Infos */
@@ -376,11 +396,11 @@ html {
   background: rgba(255, 255, 255, 0.3); /* Light transparent background */
   border: none;
   outline: none;
-  padding: 13px;
+  padding: 10px;
   width: 100%;
   border-radius: 5px;
   color: #333333;
-  font-size: 1rem; /* Slightly larger font for the message input */
+  font-size: 0.75rem; /* Slightly larger font for the message input */
   margin-top: 14px;
 }
 
