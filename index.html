@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Discord Profile Card - New</title>
+    <title>Fuenzy's Profile</title>
   </head>
   <body>
     <div class="card-container">
-      <!-- Main Card -->
+      <!-- Main Discord Card -->
       <div class="card">
         <div class="card-header">
           <div
@@ -20,11 +20,10 @@
         <div class="card-body">
           <div class="profile-header">
             <div class="profil-logo-border">
-            <div class="profil-logo">
-              <img src="https://i.imgur.com/rE5Apdy.png" alt="Profile Picture" />
+              <div class="profil-logo">
+                <img src="https://i.imgur.com/rE5Apdy.png" alt="Profile Picture" />
+              </div>
             </div>
-            </div>
-
             <div class="badges-container">
               <div class="badge-item">
                 <img src="./assets/img/badges/bravery.webp" alt="" />
@@ -49,9 +48,7 @@
               <span class="dot"></span>
               <span class="pronouns">he/him</span>
             </div>
-            <!-- <hr /> -->
             <div class="basic-infos">
-              <div class="category-title"></div>
               <p>Professional nothinger</p>
             </div>
             <div class="basic-infos">
@@ -90,27 +87,42 @@
         </div>
       </div>
     </div>
-    
-    <!-- Audio element for notification sound -->
+
+    <!-- New Profile Section -->
+    <section class="main-content">
+      <h2>About Me</h2>
+      <p>Hello! I’m Fuenzy, a passionate nothinger who enjoys building projects and exploring new ideas. My interests include gaming, programming, and making cool designs.</p>
+      
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Project 1: Discord Bot</h3>
+          <p>A custom bot built for community engagement.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project 2: GitHub Profile</h3>
+          <p>A unique GitHub profile that showcases my work and personality.</p>
+        </div>
+      </div>
+    </section>
+
     <audio id="notifSound" src="./assets/sounds/notif.mp3" preload="auto"></audio>
-    
+
     <script>
       // JavaScript to play the sound on message "send"
       document.addEventListener("DOMContentLoaded", function () {
         const messageInput = document.getElementById("messageInput");
         const notifSound = document.getElementById("notifSound");
 
-        // Function to play the notification sound
         function playNotifSound() {
           notifSound.play();
         }
 
-        // Detecting Enter key press
         messageInput.addEventListener("keydown", function (event) {
           if (event.key === "Enter") {
-            event.preventDefault(); // Prevent newline in the input
-            playNotifSound(); // Play the sound
-            messageInput.value = ""; // Clear the input after "sending"
+            event.preventDefault();
+            playNotifSound();
+            messageInput.value = "";
           }
         });
       });

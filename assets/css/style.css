@@ -433,3 +433,55 @@ html {
 }
 
 
+/* Main Content Section */
+.main-content {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Titles for Sections */
+.main-content h2 {
+  font-size: 1.8rem;
+  color: #333;
+  border-bottom: 2px solid #fd7d55;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+.main-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Projects Section */
+.projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  flex: 1 1 45%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(240, 240, 255, 0.6));
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
