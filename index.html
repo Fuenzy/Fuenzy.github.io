@@ -1,7 +1,116 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Discord Profile Card - New</title>
+  </head>
+  <body>
+    <div class="card-container">
+      <!-- First Card -->
+      <div class="card">
+        <div class="card-header">
+          <div
+            style="background: url('./assets/img/banner.gif')"
+            class="banner-img"
+          ></div>
+        </div>
+        <div class="card-body">
+          <div class="profile-header">
+            <div class="profil-logo">
+              <img src="./assets/img/logo.png" alt="Profile Picture" />
+            </div>
+            <div class="badges-container">
+              <div class="badge-item">
+                <img src="./assets/img/badges/bravery.webp" alt="" />
+                <div class="tooltip tooltip-up">Tooltip</div>
+              </div>
+              <div class="badge-item">
+                <img src="./assets/img/badges/nitro.webp" alt="" />
+                <div class="tooltip tooltip-up">Tooltip</div>
+              </div>
+              <div class="badge-item">
+                <img src="./assets/img/badges/boost.webp" alt="" />
+                <div class="tooltip tooltip-up">
+                  A super badge since a long time ago.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="username">Fuenzy</div>
+            <div class="username-info">
+              <span class="username-handle">fuenzy</span>
+              <span class="dot"></span>
+              <span class="pronouns">he/him</span>
+            </div>
+            <!-- <hr /> -->
+            <div class="basic-infos">
+              <div class="category-title">About Me</div>
+              <p>Professional nothinger</p>
+            </div>
+            <div class="basic-infos">
+              <div class="category-title">Member Since</div>
+              <p>Jun 14, 2016</p>
+            </div>
+            <div class="roles">
+              <div class="category-title">Roles</div>
+              <div class="roles-list">
+                <div class="role">
+                  <div class="role-color" style="background: orange"></div>
+                  Cool guy
+                </div>
+                <div class="role">
+                  <div class="role-color" style="background: violet"></div>
+                  femboy
+                </div>
+                <div class="role">
+                  <div class="role-color" style="background: green"></div>
+                  money
+                </div>
+                <div class="role">
+                  <div class="role-color" style="background: yellow"></div>
+                  pee
+                </div>
+              </div>
+            </div>
+            <div class="note">
+              <div class="category-title">Note</div>
+              <textarea placeholder="Click to add a note"></textarea>
+            </div>
+            <div class="message">
+              <input id="messageInput" type="text" placeholder="Send a message to @fuenzy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Audio element for notification sound -->
+    <audio id="notifSound" src="./assets/sounds/notif.mp3" preload="auto"></audio>
+    
+    <script>
+      // JavaScript to play the sound on message "send"
+      document.addEventListener("DOMContentLoaded", function () {
+        const messageInput = document.getElementById("messageInput");
+        const notifSound = document.getElementById("notifSound");
+
+        // Function to play the notification sound
+        function playNotifSound() {
+          notifSound.play();
+        }
+
+        // Detecting Enter key press
+        messageInput.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault(); // Prevent newline in the input
+            playNotifSound(); // Play the sound
+            messageInput.value = ""; // Clear the input after "sending"
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
