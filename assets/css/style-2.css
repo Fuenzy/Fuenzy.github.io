@@ -1,0 +1,400 @@
+/* Popup Content - Enhanced Vertical Alignment */
+.popup-content {
+  display: flex;
+  flex-direction: column; /* Vertical alignment */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  text-align: center; /* Center-align text */
+  gap: 20px; /* Increased spacing between elements */
+  padding: 15px; /* Add padding for better spacing */
+  background: linear-gradient(135deg, #252525, #1f1f1f); /* Subtle gradient background */
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+  animation: fadeInUp 0.4s ease-out; /* Subtle animation */
+}
+
+/* Smooth Fade-In-Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Settle into place */
+  }
+}
+
+/* Profile Popup - Consistent Layout */
+#profile-popup .popup-content {
+  display: flex;
+  flex-direction: column; /* Maintain vertical stacking */
+  align-items: center; /* Center-align content */
+  justify-content: center; /* Center-align vertically */
+  text-align: center; /* Center-align text */
+  gap: 15px; /* Space between elements */
+}
+
+/* Image Styling - Improved Design */
+.popup-content img {
+  width: 100px; /* Larger, more prominent image */
+  height: 100px; /* Keep aspect ratio */
+  border-radius: 50%; /* Circular image */
+  border: 4px solid rgba(255, 255, 255, 0.1); /* Subtle border for contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.popup-content img:hover {
+  transform: scale(1.1); /* Slight zoom-in effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* More prominent shadow on hover */
+}
+
+/* Text Styling - Elegant Typography */
+.popup-content .text-container {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  align-items: center; /* Center-align text */
+  text-align: center; /* Ensure text alignment */
+  gap: 8px; /* Space between text lines */
+}
+
+.popup-content .text-container h2 {
+  font-size: 1.8rem; /* Larger heading for prominence */
+  font-weight: bold; /* Emphasized text */
+  text-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2); /* Subtle glow effect */
+  color: #ffffff; /* Crisp white text */
+}
+
+.popup-content .text-container p {
+  font-size: 1rem; /* Legible font size */
+  color: #d6d6d6; /* Subtle off-white for less harsh contrast */
+  line-height: 1.6; /* Comfortable line spacing */
+  max-width: 80%; /* Restrict width for readability */
+}
+
+/* Close Button - Refined Styling */
+.popup .close-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #5865f2, #7289da); /* Modern gradient */
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add depth */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.popup .close-popup:hover {
+  background: linear-gradient(135deg, #404eed, #5a6faf); /* Slightly darker hover effect */
+  transform: scale(1.1); /* Subtle zoom-in on hover */
+}
+
+/* Ensure Consistent Hidden State */
+.popup.hidden .popup-content {
+  visibility: hidden; /* Prevent layout shifting when hidden */
+  opacity: 0; /* Smooth fading-out effect */
+  transition: opacity 0.3s ease-out;
+}
+
+/* Profile Popup - Full Card Alignment */
+#profile-popup .popup-content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align content at the top */
+  align-items: flex-start; /* Align items to the left */
+  text-align: left; /* Left-align text */
+  padding: 20px; /* Add padding to align content properly */
+  gap: 10px; /* Space between elements */
+  width: 100%; /* Fill the card */
+  height: 100%; /* Fill the card */
+  box-sizing: border-box; /* Include padding in dimensions */
+}
+
+/* Profile Image Styling - Adjusted for Card Layout */
+#profile-popup .popup-content img {
+  width: 80px; /* Adjust size to fit the layout */
+  height: 80px; /* Keep aspect ratio */
+  border-radius: 50%; /* Circular image */
+  margin-bottom: 15px; /* Space below the image */
+}
+
+/* Text Container Styling - Full Card */
+#profile-popup .popup-content .text-container {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  gap: 5px; /* Space between text items */
+  width: 100%; /* Fill the available space */
+}
+
+/* Text Content Adjustments */
+#profile-popup .popup-content .text-container h2 {
+  font-size: 1.6rem; /* Adjust heading size */
+  font-weight: bold; /* Emphasized text */
+  color: #ffffff; /* White text for contrast */
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+#profile-popup .popup-content .text-container p {
+  font-size: 1rem; /* Legible font size */
+  color: #d6d6d6; /* Off-white text for readability */
+  line-height: 1.5; /* Comfortable line spacing */
+  margin-bottom: 10px; /* Space below each paragraph */
+}
+
+/* Ensure Consistent Hidden State */
+#profile-popup.popup.hidden .popup-content {
+  visibility: hidden; /* Prevent layout shifting when hidden */
+  opacity: 0; /* Smooth fading-out effect */
+  transition: opacity 0.3s ease-out;
+}
+/* Blur Content Container When Popup Is Active */
+body.popup-active .content-container {
+  filter: blur(6px); /* Blurs only the content container */
+  transition: filter 0.3s ease-in-out; /* Smooth blur transition */
+}
+
+/* Add Glow Effect to Navbar */
+body.popup-active .navbar {
+  box-shadow: 0 0 20px rgba(114, 137, 218, 0.8); /* Adds a glow effect */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth glow transition */
+}
+
+/* Remove Blur and Glow When No Popups */
+body:not(.popup-active) .content-container,
+body:not(.popup-active) .navbar {
+  filter: none; /* Removes blur */
+  box-shadow: none; /* Removes glow effect */
+  transition: filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Popup Container */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  transform: translate(-50%, -50%) rotateY(-180deg) scale(0.8); /* Starts facing the back */
+  transform-origin: center center; /* Center pivot for flipping */
+  z-index: 1000;
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  background: linear-gradient(135deg, #3a3b3c, #1f2022); /* Front card color */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  color: white;
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.8s;
+  backface-visibility: hidden; /* Hides the back face when flipping */
+}
+
+/* Active State - Flips into view */
+.popup.active {
+  transform: translate(-50%, -50%) rotateY(0deg) scale(1);
+  opacity: 1;
+}
+
+/* Hidden State - Flips out of view */
+.popup.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotateY(-180deg) scale(0.8); /* Consistent flipping direction */
+  pointer-events: none;
+}
+
+/* Add Back Side for the Card */
+.popup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1f2022, #101112); /* Back card color */
+  border-radius: 15px;
+  transform: rotateY(0deg); /* Default back face is visible initially */
+  backface-visibility: hidden; /* Ensures only the front is visible during flipping */
+  z-index: -1;
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+}
+
+/* Perspective for Parent Element */
+body {
+  perspective: 2000px; /* Adds depth to the 3D effect */
+}
+
+/* Popup Content Styling */
+.popup h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+}
+
+.popup p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #d3d3d3;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Button */
+.popup .close-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #5865f2, #7289da); /* Discord-inspired gradient */
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.popup .close-popup:hover {
+  background: linear-gradient(135deg, #404eed, #5a6faf); /* Slightly darker hover effect */
+  transform: scale(1.1);
+}
+
+/* Navbar Styling */
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #292b2f, #2f2d29); /* Matches the navbar's gradient */
+  padding: 10px 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+}
+
+/* Navbar Links */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+/* Hover Effect for Navbar Links */
+.navbar a:hover {
+  color: #7289da;
+  transform: scale(1.1);
+}
+
+/* Selected Navbar Item - Morphing Bump Effect */
+.navbar li.selected a {
+  position: relative;
+  color: white; /* Keep text color white for the selected item */
+  font-weight: bold;
+}
+
+
+
+.navbar li.selected a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; /* Ensure the bump aligns properly */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 20px); /* Slightly wider for flush alignment */
+  height: 10px;
+  background: linear-gradient(135deg, #292b2f, #2f2d29); /* Match navbar gradient */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: none; /* Remove shadows to avoid transparency */
+  z-index: -1; /* Ensure behind the text */
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+/* shine effect to the cards */
+
+/* Updated Popup Styles */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  transform: translate(-50%, -50%) rotateY(-180deg) scale(0.8); /* Starts facing the back */
+  transform-origin: center center; /* Center pivot for flipping */
+  z-index: 1000;
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  background: linear-gradient(135deg, #3a3b3c, #1f1f1f); /* Front card color */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  color: white;
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.8s;
+  backface-visibility: hidden; /* Hides the back face when flipping */
+  overflow: hidden; /* Confine the shine effect inside */
+}
+
+/* Shine Animation */
+.popup::before {
+  content: "";
+  position: absolute;
+  top: -100%; /* Move shine higher to avoid showing box corners */
+  left: -200%; /* Start outside the box */
+  width: 75%; /* Slimmer shine */
+  height: 300%; /* Taller to avoid clipping at the corners */
+  background: rgba(255, 255, 255, 0.2); /* Subtle white shine */
+  transform: rotate(30deg); /* Angle of the shine */
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction */
+  animation: shine 3s cubic-bezier(0.4, 0, 0.2, 1) infinite; /* Smooth timing function */
+  z-index: 0; /* Ensure it stays behind card content */
+}
+
+/* Keyframes for Shine Animation */
+@keyframes shine {
+  0% {
+    left: -200%; /* Start far left */
+    opacity: 0; /* Start hidden */
+  }
+  50% {
+    left: 200%; /* Middle of the card */
+    opacity: 0.4; /* Consistent peak opacity */
+  }
+  80% {
+    left: 200%; /* Exit the card */
+    opacity: 0; /* Fade out smoothly */
+  }
+  100% {
+    left: 200%; /* Pause off-screen */
+    opacity: 0; /* Ensure fully hidden */
+  }
+}
+

@@ -24,3 +24,5 @@ modal.addEventListener("click", (e) => {
     toggleModal();
   }
 });
+
+

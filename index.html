@@ -2,130 +2,287 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fuenzy test</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Fuenzy's Profile</title>
+    <link rel="stylesheet" href="./assets/css/style-2.css" />
+    <script src="./assets/js/popup.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/quotes.js" defer></script>
   </head>
   <body>
-    <div class="card-container">
-      <!-- Main Discord Card -->
-      <div class="card">
-        <div class="card-header">
-          <div
-            style="background: url('https://imgur.com/YLmNGo1.gif')"
-            class="banner-img"
-          ></div>
-        </div>
-        <div class="card-body">
-          <div class="profile-header">
-            <div class="profil-logo-border">
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Floating Navbar -->
+      <nav class="navbar">
+        <ul>
+          <li><a href="#" class="popup-trigger" data-popup="profile-popup">Profile</a></li>
+          <li><a href="#" class="popup-trigger" data-popup="about-popup">Info</a></li>
+          <li><a href="#" class="popup-trigger" data-popup="projects-popup">Projects</a></li>
+          <li><a href="#" class="popup-trigger" data-popup="contact-popup">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Content Layout -->
+      <div class="content-container">
+        <!-- Discord Profile Section -->
+        <section class="card">
+          <div class="card-header">
+            <div
+              class="banner-img"
+              style="background-image: url('https://imgur.com/YLmNGo1.gif')"
+            ></div>
+          </div>
+          <div class="card-body">
+            <div class="profile-header">
               <div class="profil-logo">
-                <img src="https://i.imgur.com/rE5Apdy.png" alt="Profile Picture" />
+                <img
+                  src="https://i.imgur.com/rE5Apdy.png"
+                  alt="Profile Picture"
+                />
+                <div class="status online"></div>
+              </div>
+              <div class="badges-container">
+                <div class="badge-item">
+                  <img
+                    src="./assets/img/badges/bravery.webp"
+                    alt="Bravery Badge"
+                  />
+                </div>
+                <div class="badge-item">
+                  <img src="./assets/img/badges/nitro.webp" alt="Nitro Badge" />
+                </div>
+                <div class="badge-item">
+                  <img src="./assets/img/badges/boost.webp" alt="Server Boost" />
+                </div>
               </div>
             </div>
-            <div class="badges-container">
-              <div class="badge-item">
-                <img src="./assets/img/badges/bravery.webp" alt="" />
-                <div class="tooltip tooltip-up">Tooltip</div>
+            <div class="profile-body">
+              <div class="username">Fuenzy<span></span></div>
+              <div class="realnamex">fuenzy<span></span></div>
+              <hr />
+              <div class="basic-infos">
+                <div class="category-title">About Me</div>
+                <p id="about-quote">Loading...</p> <!-- Quote placeholder -->
               </div>
-              <div class="badge-item">
-                <img src="./assets/img/badges/nitro.webp" alt="" />
-                <div class="tooltip tooltip-up">Tooltip</div>
+              <div class="basic-infos">
+                <div class="category-title">Member Since</div>
+                <p>Jun 14, 2016</p>
               </div>
-              <div class="badge-item">
-                <img src="./assets/img/badges/boost.webp" alt="" />
-                <div class="tooltip tooltip-up">
-                  A super badge since a long time ago.
+              <div class="roles">
+                <div class="category-title">Roles</div>
+                <div class="roles-list">
+                  <div class="role">
+                    <div class="role-color" style="background: orange"></div>
+                    Cool Guy
+                  </div>
+                  <div class="role">
+                    <div class="role-color" style="background: violet"></div>
+                    Femboy
+                  </div>
+                  <div class="role">
+                    <div class="role-color" style="background: green"></div>
+                    Money
+                  </div>
+                  <div class="role">
+                    <div class="role-color" style="background: yellow"></div>
+                    Cash
+                  </div>
                 </div>
+              </div>
+              <div class="note">
+                <textarea placeholder="Click to add a note"></textarea>
+              </div>
+              <div class="message">
+                <input
+                  type="text"
+                  placeholder="Send a message to @Fuenzy"
+                  id="messageInput"
+                />
               </div>
             </div>
           </div>
-          <div class="profile-body">
-            <div class="username">Fuenzy</div>
-            <div class="username-info">
-              <span class="username-handle">fuenzy</span>
-              <span class="dot"></span>
-              <span class="pronouns">he/him</span>
-            </div>
-            <div class="basic-infos">
-              <p>Professional nothinger</p>
-            </div>
-            <div class="basic-infos">
-              <div class="category-title">Member Since</div>
-              <p>Jun 14, 2016</p>
-            </div>
-            <div class="roles">
-              <div class="category-title">Roles</div>
-              <div class="roles-list">
-                <div class="role">
-                  <div class="role-color" style="background: orange"></div>
-                  Cool guy
-                </div>
-                <div class="role">
-                  <div class="role-color" style="background: violet"></div>
-                  femboy
-                </div>
-                <div class="role">
-                  <div class="role-color" style="background: green"></div>
-                  money
-                </div>
-                <div class="role">
-                  <div class="role-color" style="background: yellow"></div>
-                  pee
-                </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-me">
+          <h2>About Me</h2>
+          <p>
+            Hello! I’m Fuenzy, an aspiring artist with a passion for creating and exploring. I love building projects that merge creativity with functionality, whether it’s programming quirky features, designing playful yet professional layouts, or diving into the vibrant world of gaming for inspiration. Gaming isn’t just a pastime for me—it’s a source of endless ideas and motivation to think outside the box. I thrive on solving challenges, experimenting with code, and crafting designs that tell a story, always striving to leave a unique mark with everything I create.
+          </p>
+
+          <h2 id="projects">Projects</h2>
+            <div class="projects">
+              <div class="project-card">
+                <h3>This GitHub Profile</h3>
+                <p>A unique GitHub profile that showcases my work and personality.</p>
+              </div>
+              <div class="project-card empty-card">
+                <p></p>
+              </div>
+              <!-- Empty Project Cards -->
+              <div class="project-card empty-card">
+                <p></p>
+              </div>
+              <div class="project-card empty-card">
+                <p></p>
               </div>
             </div>
-            <div class="note">
-              <div class="category-title">Note</div>
-              <textarea placeholder="Click to add a note"></textarea>
-            </div>
-            <div class="message">
-              <input id="messageInput" type="text" placeholder="Send a message to @fuenzy" />
-            </div>
-          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Popups -->
+    <div id="profile-popup" class="popup hidden">
+      <div class="popup-content">
+        <div class="popup-header">
+          <button class="close-popup close-text-button">X</button>
+        </div>
+        <h2>Profile</h2>
+        <img src="https://i.imgur.com/rE5Apdy.png" alt="Profile Picture" />
+        <p>Fuenzy<span></span></p>
+        <p>Status: Online</p>
+        <p>Likes: </p>
+      </div>
+    </div>
+
+    <div id="about-popup" class="popup hidden">
+      <div class="popup-content">
+        <button class="close-popup close-text-button">X</button>
+        <h2>Info</h2>
+        <p>
+          Hello! I’m Fuenzy, a passionate nothinger who enjoys building
+          projects and exploring new ideas. My interests include gaming,
+          programming, and making cool designs.
+        </p>
+        <p>Member since: Jun 14, 2016</p>
+      </div>
+    </div>
+
+    <div id="projects-popup" class="popup hidden">
+      <div class="popup-content">
+        <button class="close-popup close-text-button">X</button>
+        <h2>Projects</h2>
+        <div>
+          <p><strong>Project 1:</strong> Discord Bot</p>
+          <p>A custom bot built for community engagement.</p>
+          <p><strong>Project 2:</strong> GitHub Profile</p>
+          <p>A unique GitHub profile that showcases my work and personality.</p>
         </div>
       </div>
     </div>
 
-    <!-- New Profile Section -->
-    <section class="main-content">
-      <h2>About Me</h2>
-      <p>Hello! I’m Fuenzy, a passionate nothinger who enjoys building projects and exploring new ideas. My interests include gaming, programming, and making cool designs.</p>
-      
-      <h2>Projects</h2>
-      <div class="projects">
-        <div class="project-card">
-          <h3>Project 1: Discord Bot</h3>
-          <p>A custom bot built for community engagement.</p>
-        </div>
-        <div class="project-card">
-          <h3>Project 2: GitHub Profile</h3>
-          <p>A unique GitHub profile that showcases my work and personality.</p>
-        </div>
+    <div id="contact-popup" class="popup hidden">
+      <div class="popup-content">
+        <button class="close-popup close-text-button">X</button>
+        <h2>Contact</h2>
+        <p>Not a thing I really do yet</p>
+        <p>but it would be pretty awesome wouldn't it</p>
       </div>
-    </section>
+    </div>
 
-    <audio id="notifSound" src="./assets/sounds/notif.mp3" preload="auto"></audio>
-
-    <script>
-      // JavaScript to play the sound on message "send"
-      document.addEventListener("DOMContentLoaded", function () {
-        const messageInput = document.getElementById("messageInput");
-        const notifSound = document.getElementById("notifSound");
-
-        function playNotifSound() {
-          notifSound.play();
-        }
-
-        messageInput.addEventListener("keydown", function (event) {
-          if (event.key === "Enter") {
-            event.preventDefault();
-            playNotifSound();
-            messageInput.value = "";
-          }
-        });
-      });
-    </script>
+    <script src="./assets/js/popup.js" defer></script>
   </body>
+  <div class="floating-footer" id="footer">
+    made from scratch
+  </div>
+
+  <style>
+
+/* Floating Footer */
+.floating-footer {
+  position: fixed;
+  bottom: 20px; /* Floats 20px above the bottom of the page */
+  left: 50%; /* Centers horizontally */
+  transform: translateX(-50%); /* Adjusts centering */
+  background: rgba(50, 50, 50, 0.9); /* Dark translucent background */
+  color: #fff; /* White text for contrast */
+  padding: 10px 20px; /* Padding for better spacing */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  font-size: 0.9rem; /* Smaller text size */
+  font-family: "Arial", sans-serif; /* Consistent font style */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  z-index: 1000; /* Ensures it stays above other elements */
+  animation: fadeIn 1s ease-in; /* Optional fade-in effect */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  cursor: pointer; /* Indicates interactivity */
+}
+
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px); /* Slide in from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Settle in place */
+  }
+}
+
+
+/* Project Cards Container */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Default Project Card Styling */
+.project-card {
+  background: linear-gradient(135deg, #292b2f, #2f3136); /* Dark gradient background */
+  border-radius: 12px; /* Smooth rounded corners */
+  padding: 20px;
+  width: 200px; /* Consistent width */
+  height: 150px; /* Consistent height */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Filled Cards */
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Empty Project Card Styling */
+.project-card.empty-card {
+  background: none; /* Transparent background */
+  border: 2px dashed rgba(200, 200, 200, 0.6); /* Dashed outline */
+  color: rgba(200, 200, 200, 0.8); /* Subtle text color */
+  font-style: italic; /* Italic font for distinction */
+  justify-content: center; /* Center-align text */
+  text-align: center; /* Center-align text */
+  box-shadow: none; /* No shadow for empty cards */
+}
+
+/* Hover Effect for Empty Cards */
+.project-card.empty-card:hover {
+  background: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+  border-color: rgba(255, 255, 255, 0.8); /* Highlighted dashed outline */
+}
+  </style>
+
+<script>
+  const footer = document.getElementById('footer');
+
+  footer.addEventListener('mouseenter', () => {
+    footer.textContent = "that's right lol";
+  });
+
+  footer.addEventListener('mouseleave', () => {
+    footer.textContent = "made from scratch";
+  });
+</script>
 </html>
