@@ -1,0 +1,171 @@
+/* General Layout Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Whitney", sans-serif;
+  box-sizing: border-box;
+  background: #1e1e1e;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh; /* Full viewport height */
+  padding-top: 100px; /* Space for the navbar */
+  padding-bottom: 70px; /* Space for the footer */
+  transform: scale(1); /* Default scale for desktop */
+  transform-origin: top center; /* Scale from the top-center */
+  width: 1200px; /* Fixed width for desktop layout */
+  margin: 0 auto; /* Center-align the container */
+}
+
+/* Mobile-Specific Scaling */
+@media (max-width: 768px) {
+  .main-container {
+    transform: scale(0.8); /* Scale down for mobile */
+    width: 1500px; /* Compensate for scaling */
+    padding-top: 80px; /* Adjust spacing for the navbar */
+    padding-bottom: 90px; /* Adjust spacing for the footer */
+  }
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  width: 100%; /* Match main container width */
+  max-width: 1200px;
+  background: linear-gradient(135deg, #292b2f, #2f2d29);
+  padding: 15px 20px; /* Comfortable padding */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  z-index: 1000;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Discord Profile Section */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  background: #292b2f;
+  width: 345px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 20px auto; /* Center-align the card */
+}
+
+.card-header .banner-img {
+  width: 100%;
+  height: 120px;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Card Body */
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Profile Logo */
+.profil-logo {
+  position: relative;
+  border: 6px solid #292b2f;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.profil-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Profile Body */
+.profile-body {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.profile-body .username {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.profile-body p {
+  font-size: 0.9rem;
+  color: #d6d6d6;
+  margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #292b2f, #2f3136); /* Dark gradient background */
+  border-radius: 12px; /* Smooth rounded corners */
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  text-align: center; /* Center-align project text */
+  border: 2px dashed rgba(255, 255, 255, 0.4); /* Dashed border for empty projects */
+}
+
+.project-card h3, .project-card p {
+  margin: 0;
+  word-wrap: break-word; /* Handle long text properly */
+}
+
+/* Floating Footer */
+.floating-footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(50, 50, 50, 0.9);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: center;
+  white-space: nowrap;
+}
