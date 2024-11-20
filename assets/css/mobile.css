@@ -80,15 +80,7 @@ body, html {
   align-items: center;
 }
 
-/* Profile Logo */
-.profil-logo {
-  position: relative;
-  border: 6px solid #292b2f;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-}
+
 
 /* Projects Section */
 .projects {
